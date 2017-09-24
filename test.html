@@ -1,0 +1,24 @@
+<!-- Test code for TheGamesDb data source -->
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <title>TheGamesDb Data Source Test</title>
+  <script type="text/javascript" src="sax.js"></script>
+  <script type="text/javascript" src="xmldoc.js"></script>
+  <script type="text/javascript" src="http.js"></script>
+  <script type="text/javascript" src="thegamesdb.js"></script>
+  <script type="text/javascript">
+    console.log("Beginning query.");
+    var tgdb = new TheGamesDb();
+    var search = tgdb.search("Splatoon 2");
+    console.log(search);
+    for (i=0; i<search.length; i++) {
+      var game = tgdb.getDetails(search[i]["id"]);
+      console.log(game);
+    }
+    console.log("Query complete.");
+  </script>
+</head>
+<body>
+</body>
+</html>
