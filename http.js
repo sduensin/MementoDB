@@ -11,8 +11,11 @@ httpClient.prototype.get = function(query) {
   var request = new XMLHttpRequest();
   request.open('GET', query, false);  // `false` makes the request synchronous
   request.send(null);
+  var HttpResult = {};
+  HttpResult.code = request.status;
+  HttpResult.body = null;
   if (request.status === 200) {
-    return request.responseText;
+    HttpResult.body = request.responseText;
   }
-  return null;
+  return HttpResult;
 }

@@ -1893,7 +1893,8 @@ function TheGamesDb() {
 
 TheGamesDb.prototype.search = function(gameTitle) {
   var resultArray = [];
-  var rawxml = http().get("http://thegamesdb.net/api/GetGamesList.php?name=" + encodeURIComponent(gameTitle));
+  var result = http().get("http://thegamesdb.net/api/GetGamesList.php?name=" + encodeURIComponent(gameTitle));
+  var rawxml = result.body;
   if (rawxml) {
     var xml = new XmlDocument(rawxml);
     xml.eachChild(function(game) {
@@ -1909,7 +1910,8 @@ TheGamesDb.prototype.search = function(gameTitle) {
 
 TheGamesDb.prototype.getDetails = function(id) {
   var object = {};
-  var rawxml = http().get("http://thegamesdb.net/api/GetGame.php?id=" + encodeURIComponent(id));
+  var result = http().get("http://thegamesdb.net/api/GetGame.php?id=" + encodeURIComponent(id));
+  var rawxml = result.body;
   if (rawxml) {
     var xml = new XmlDocument(rawxml);
     var imageBase = xml.valueWithPath("baseImgUrl");
