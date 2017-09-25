@@ -1,4 +1,4 @@
-;(function (sax) { // wrapper for non-node envs
+function createSax(sax) {
   sax.parser = function (strict, opt) { return new SAXParser(strict, opt) }
   sax.SAXParser = SAXParser
   sax.SAXStream = SAXStream
@@ -1562,4 +1562,4 @@
       }
     }())
   }
-})(typeof exports === 'undefined' ? this.sax = {} : exports)
+};

@@ -1,18 +1,7 @@
 (function () {
 
-var sax;
-
-if (typeof module !== 'undefined' && module.exports && !global.xmldocAssumeBrowser) {
-  // We're being used in a Node-like environment
-  sax = require('sax');
-}
-else {
-  // assume it's attached to the Window object in a browser
-  sax = this.sax;
-
-  if (!sax) // no sax for you!
-    throw new Error("Expected sax to be defined. Make sure you're including sax.js before this file.");
-}
+var sax = {};
+createSax(sax);
 
 /*
 XmlElement is our basic building block. Everything is an XmlElement; even XmlDocument
