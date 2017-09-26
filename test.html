@@ -13,12 +13,16 @@
   <script type="text/javascript">
     console.log("Beginning query.");
     var tgdb = new TheGamesDb();
+    /*
     var search = tgdb.search("Splatoon 2");
     console.log(search);
     for (i=0; i<search.length; i++) {
       var game = tgdb.getDetails(search[i]["id"]);
       console.log(game);
     }
+    */
+    var game = tgdb.getDetails(6006);
+    console.log(game);
     console.log("Query complete.");
   </script>
 </head>
