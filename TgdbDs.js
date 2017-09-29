@@ -1920,7 +1920,7 @@ TheGamesDb.prototype.getDetails = function(id) {
     v = game.valueWithPath("id");          if (v !== undefined) object["ID"]          = Number(v);
     v = game.valueWithPath("GameTitle");   if (v !== undefined) object["Title"]       = v;
     v = game.valueWithPath("Platform");    if (v !== undefined) object["Platform"]    = v;
-    v = game.valueWithPath("ReleaseDate"); if (v !== undefined) object["ReleaseDate"] = new Date(v);
+    v = game.valueWithPath("ReleaseDate"); if (v !== undefined) object["ReleaseDate"] = moment(new Date(v)).toDate().getTime();
     v = game.valueWithPath("Overview");    if (v !== undefined) object["Description"] = v;
     v = game.valueWithPath("Co-op");       if (v !== undefined) object["CoOp"]        = v;
     v = game.valueWithPath("Youtube");     if (v !== undefined) object["YouTube"]     = v;
