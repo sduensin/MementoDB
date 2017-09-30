@@ -1,14 +1,14 @@
 # MementoDB
-Scripts for Memento Database
+Scripts for Memento Database (https://mementodatabase.com/)
 
 Uses code from:
 
-* https://raw.githubusercontent.com/isaacs/sax-js/master/lib/sax.js
-* https://raw.githubusercontent.com/nfarina/xmldoc/master/lib/xmldoc.js
 * https://momentjs.com/downloads/moment.js
 
+This main directory contains code useful for testing scripts intended to run
+inside the Memento Database with a web browser or other JavaScript runtime.
 
-To use this in your own database, you must include TgdbDs.js and the built-in
-moment.min.js libraries.  Call it with:
+* http.js - Emulates the Memento `http().get()` method
+* moment.js - Un-minimized copy of Moment (included as a built-in library with Memento)
 
->`TgdbDs(query);`
+Directories under this one are individual scripts for use with Memento.  More documentation is available there.
