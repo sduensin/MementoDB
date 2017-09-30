@@ -2,7 +2,7 @@
 
 # Combines needed JS files into a single file for MementoDB
 
-cat sax.js        >  TgdbDs.js
-cat xmldoc.js     >> TgdbDs.js
-cat thegamesdb.js >> TgdbDs.js
-cat memento.js    >> TgdbDs.js
+cat sax.js        >  ../TgdbAutofill.js
+cat xmldoc.js     >> ../TgdbAutofill.js
+cat thegamesdb.js >> ../TgdbAutofill.js
+cat memento.js    >> ../TgdbAutofill.js
